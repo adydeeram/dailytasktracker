@@ -1,0 +1,152 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/dist/output.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Daily Work Update</title>
+</head>
+
+<body>
+
+
+    <!-- Form  -->
+
+
+    <div class="bg-gray-200 min-h-screen pt-16 font-mono mb-16">
+        <div  class="border-b border-gray-400 w-auto" style="margin: 0 10%;">
+            <h2 class="text-2xl text-gray-900">Daily Work Tracker</h2>
+        </div>
+        <div class="container flex justify-center">
+            <div class="inputs w-full max-w-2xl p-20">
+            <div class="flex justify-between">
+                     <div id="alert" style="display: none;">
+                         <div class="flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
+                            <div class="flex items-center justify-center w-12 bg-red-500">
+                                <svg class="w-6 h-6 text-white fill-current" viewBox="0 0 40 40" >
+                                    <path d="M20 3.36667C10.8167 3.36667 3.3667 10.8167 3.3667 20C3.3667 29.1833 10.8167 36.6333 20 36.6333C29.1834 36.6333 36.6334 29.1833 36.6334 20C36.6334 10.8167 29.1834 3.36667 20 3.36667ZM19.1334 33.3333V22.9H13.3334L21.6667 6.66667V17.1H27.25L19.1334 33.3333Z"/>
+                                </svg>
+                            </div>
+                            
+                            <div class="px-4 py-2 -mx-3">
+                                <div class="mx-3">
+                                    <span class="font-semibold text-red-500 dark:text-red-400">Error</span>
+                                    <p class="text-sm text-gray-600 dark:text-gray-200">Please check all inputs</p>
+                                </div>
+                            </div>
+                        </div>
+                  </div>
+                  <div id="sucess" style="display: none;">
+                      
+                    <div class="flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
+                        <div class="flex items-center justify-center w-12 bg-emerald-500">
+                            <svg class="w-6 h-6 text-white fill-current" viewBox="0 0 40 40" >
+                                <path d="M20 3.33331C10.8 3.33331 3.33337 10.8 3.33337 20C3.33337 29.2 10.8 36.6666 20 36.6666C29.2 36.6666 36.6667 29.2 36.6667 20C36.6667 10.8 29.2 3.33331 20 3.33331ZM16.6667 28.3333L8.33337 20L10.6834 17.65L16.6667 23.6166L29.3167 10.9666L31.6667 13.3333L16.6667 28.3333Z"/>
+                            </svg>
+                        </div>
+                        
+                        <div class="px-4 py-2 -mx-3">
+                            <div class="mx-3">
+                                <span class="font-semibold text-emerald-500 dark:text-emerald-400">Success</span>
+                                <p class="text-sm text-gray-600 dark:text-gray-200">Your task has been added to feild</p>
+                            </div>
+                        </div>
+                    </div>
+                        
+                  </div>
+            </div>
+                <form class="mt-6  pt-4">
+                    <div class='flex flex-wrap -mx-16 mb-6'>
+                        <div class='w-full md:w-full px-3 mb-6'>
+                            <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'
+                                for='grid-text-1'>Date</label>
+                            <input id="date-input"
+                                class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500'
+                                id='grid-text-1' type='date' placeholder='Chose Date' required>
+                        </div>
+
+                        <div class='w-full md:w-full px-3 mb-6'>
+                            <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>Your
+                                Working Area</label>
+                            <div class="flex-shrink w-full inline-block relative">
+                                <select id="dropdown"
+                                    class="block appearance-none text-gray-600 w-full bg-white border border-gray-400 shadow-inner px-4 py-2 pr-8 rounded">
+                                    <option>choose ...</option>
+                                    <option>HTML CSS</option>
+                                    <option>JavaSCript</option>
+                                    <option>React</option>
+                                    <option>Other</option>
+                                </select>
+                                <div
+                                    class="pointer-events-none absolute top-0 mt-3  right-0 flex items-center px-2 text-gray-600">
+                                    
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="personal w-full border-t border-gray-400 pt-4">
+                            <h2 class="text-2xl text-gray-900">Work information</h2>
+                            <div class="flex items-center justify-between mt-4">
+
+                                <div class='w-full md:w-full px-3 mb-6'>
+                                    <label
+                                        class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>Please
+                                        entre details</label>
+                                    <textarea id="text-area"
+                                        class='bg-gray-100 rounded-md border leading-normal resize-none w-full h-20 py-2 px-3 shadow-inner border border-gray-400 font-medium placeholder-gray-700 focus:outline-none focus:bg-white'
+                                        required></textarea>
+                                </div>
+                                <div class="flex justify-end">
+                                    <button id="submitBtn"
+                                        class="appearance-none bg-gray-200 text-gray-900 px-2 py-1 shadow-sm border border-gray-400 rounded-md mr-3"
+                                        type="submit">Add to list</button>
+                                </div>
+
+                            </div>
+
+                            <br>
+                            <br>
+
+
+                            <!-- List section  -->
+                            <div class="personal w-auto overflow-x-scroll border-t border-gray-400 pt-4">
+                                <h2 class="block uppercase tracking-wide text-gray-700 text-2xl font-bold mb-2">Work
+                                    List </h2>
+                                <table class="rounded-t-lg m-1 w-full mx-auto bg-gray-200 text-gray-800">
+                                    <tr class="text-left border-b-2 border-gray-300">
+                                        <th class="px-4 py-3">S/No</th>
+                                        <th class="px-4 py-3">Date</th>
+                                        <th class="px-4 py-3">Work Area</th>
+                                        <th class="px-4 py-3">Work Information</th>
+                                        <th class="px-4 py-3"></th>
+                                    </tr>
+                                    <tbody id="table-body">
+                                    <!-- <tr class="bg-gray-100 border-b border-gray-200">
+                                        <td class="px-4 py-3">Jill</td>
+                                        <td class="px-4 py-3">Smith</td>
+                                        <td class="px-4 py-3">50</td>
+                                        <td class="px-4 py-3"><ion-icon name="close-circle-outline" class="cursor-pointer "></ion-icon></td>
+                                    </tr> -->
+                                </tbody>
+                                    
+
+                                </table>
+
+                            </div>
+                        </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./app.js"></script>
+    <script src="../path/to/flowbite/dist/flowbite.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
